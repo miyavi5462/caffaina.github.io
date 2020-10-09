@@ -33,9 +33,8 @@ header {
         width: 100%;
         min-width: 1280px;
 
-        
         padding: 0 150px;
-        
+
         position: fixed;
         top: 0;
         left: 0;
@@ -44,12 +43,12 @@ header {
         justify-content: space-between;
         align-items: center;
 
-        &:hover{
+        &:hover {
             background-color: #0c3141;
         }
         nav {
             height: 100%;
-            
+
             ul {
                 height: 100%;
                 display: flex;
