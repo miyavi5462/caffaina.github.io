@@ -19,84 +19,108 @@ ul {
     padding: 0;
 }
 
+/* 宣告 */
+
+$header-hight: 64px;
+
 /* CSS */
 
 header {
-    height: 56px;
-    background-color: #0c3141;
+    height: $header-hight;
 
-    padding: 0 150px;
+    .wapper {
+        height: $header-hight;
+        width: 100%;
+        min-width: 1280px;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+        
+        padding: 0 150px;
+        
+        position: fixed;
+        top: 0;
+        left: 0;
 
-    #navbar {
-        height: 100%;
-        ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:hover{
+            background-color: #0c3141;
+        }
+        nav {
             height: 100%;
-            display: flex;
-            align-items: stretch;
-            li {
-                position: relative;
-                margin: 0 20px;
-
+            
+            ul {
+                height: 100%;
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                align-items: stretch;
 
-                &:first-child {
-                    padding-left: 0;
-                }
-                &:last-child {
-                    padding-right: 0;
-                }
+                li {
+                    position: relative;
+                    margin: 0 20px;
 
-                // 動畫
-                vertical-align: middle;
-                transform: perspective(1px) translateZ(0);
-                box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-                position: relative;
-                &:before {
-                    content: "";
-                    position: absolute;
-                    width: 100%;
-                    height: 2px;
-                    bottom: 0;
-                    left: 0;
-                    background: #ffffff;
-                    transform: scaleX(0);
-                    transform-origin: right top;
-                    transition: transform 0.1s;
-                    opacity: 0.3;
-                }
-                &:hover:before,
-                &:focus:before,
-                &:active:before {
-                    transform-origin: left top;
-                    transform: scale(1);
-                }
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
 
-                a {
-                    font-size: 16px;
-                    font-weight: normal;
-                    color: #ffffff;
-                    letter-spacing: 1px;
-                    &::before {
-                        content: "";
-                        width: 100%;
-                        height: 100%;
-                        position: absolute;
-
-                        top: 0;
-                        left: 0;
+                    &:first-child {
+                        padding-left: 0;
                     }
-                    &:hover {
-                        opacity: 0.7;
+                    &:last-child {
+                        padding-right: 0;
+                    }
+
+                    /* 動畫 */
+                    vertical-align: middle;
+                    transform: perspective(1px) translateZ(0);
+                    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+                    position: relative;
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 2px;
+                        bottom: 0;
+                        left: 0;
+                        background: #ffffff;
+                        transform: scaleX(0);
+                        transform-origin: right top;
                         transition: transform 0.1s;
+                        opacity: 0.3;
+                    }
+                    &:hover:before,
+                    &:focus:before,
+                    &:active:before {
+                        transform-origin: left top;
+                        transform: scale(1);
+                    }
+
+                    a {
+                        font-size: 16px;
+                        font-weight: normal;
+                        color: #ffffff;
+                        letter-spacing: 1px;
+                        &::before {
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+
+                            top: 0;
+                            left: 0;
+                        }
+                        &:hover {
+                            opacity: 0.7;
+                            transition: transform 0.1s;
+                        }
                     }
                 }
             }
         }
     }
+}
+
+main {
+    height: calc(100vh - #{$header-hight});
+    background-color: #333333;
 }

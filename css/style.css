@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* reset */
 * {
   -webkit-box-sizing: border-box;
@@ -19,11 +20,20 @@ ul {
   padding: 0;
 }
 
+/* 宣告 */
 /* CSS */
 header {
-  height: 56px;
-  background-color: #0c3141;
+  height: 64px;
+}
+
+header .wapper {
+  height: 64px;
+  width: 100%;
+  min-width: 1280px;
   padding: 0 150px;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,11 +45,15 @@ header {
           align-items: center;
 }
 
-header #navbar {
+header .wapper:hover {
+  background-color: #0c3141;
+}
+
+header .wapper nav {
   height: 100%;
 }
 
-header #navbar ul {
+header .wapper nav ul {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,7 +63,7 @@ header #navbar ul {
           align-items: stretch;
 }
 
-header #navbar ul li {
+header .wapper nav ul li {
   position: relative;
   margin: 0 20px;
   display: -webkit-box;
@@ -61,6 +75,7 @@ header #navbar ul li {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  /* 動畫 */
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
           transform: perspective(1px) translateZ(0);
@@ -69,15 +84,15 @@ header #navbar ul li {
   position: relative;
 }
 
-header #navbar ul li:first-child {
+header .wapper nav ul li:first-child {
   padding-left: 0;
 }
 
-header #navbar ul li:last-child {
+header .wapper nav ul li:last-child {
   padding-right: 0;
 }
 
-header #navbar ul li:before {
+header .wapper nav ul li:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -96,21 +111,21 @@ header #navbar ul li:before {
   opacity: 0.3;
 }
 
-header #navbar ul li:hover:before, header #navbar ul li:focus:before, header #navbar ul li:active:before {
+header .wapper nav ul li:hover:before, header .wapper nav ul li:focus:before, header .wapper nav ul li:active:before {
   -webkit-transform-origin: left top;
           transform-origin: left top;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
 
-header #navbar ul li a {
+header .wapper nav ul li a {
   font-size: 16px;
   font-weight: normal;
   color: #ffffff;
   letter-spacing: 1px;
 }
 
-header #navbar ul li a::before {
+header .wapper nav ul li a::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -119,11 +134,16 @@ header #navbar ul li a::before {
   left: 0;
 }
 
-header #navbar ul li a:hover {
+header .wapper nav ul li a:hover {
   opacity: 0.7;
   -webkit-transition: -webkit-transform 0.1s;
   transition: -webkit-transform 0.1s;
   transition: transform 0.1s;
   transition: transform 0.1s, -webkit-transform 0.1s;
+}
+
+main {
+  height: calc(100vh - 64px);
+  background-color: #333333;
 }
 /*# sourceMappingURL=style.css.map */
