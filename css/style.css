@@ -150,9 +150,6 @@ main .swiper-container {
 }
 
 main .swiper-container .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,23 +162,46 @@ main .swiper-container .swiper-slide {
 }
 
 main .swiper-container .swiper-slide .banner {
-  position: relative;
   width: 100%;
   height: 100%;
+  position: relative;
   background-image: url("https://placem.at/place?w=1920&txt=0");
+  background-position: center;
 }
 
-main .swiper-container .swiper-slide .banner .icon {
+main .swiper-container .swiper-slide .banner .sixAngle {
   -webkit-clip-path: url(#slideMask);
           clip-path: url(#slideMask);
-  background-color: #000;
+  background-color: #fff;
   position: absolute;
-  width: 1280px;
-  height: 776px;
+  width: 520px;
+  height: 600px;
   left: 50%;
   top: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
+  -webkit-filter: brightness(1.1);
+          filter: brightness(1.1);
+  background-image: url("https://placem.at/place?w=1920&txt=0");
+  background-position: center;
+}
+
+main .swiper-container .swiper-slide .banner .wapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+main .swiper-container .swiper-slide .banner .wapper h1 {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+main .swiper-container .swiper-slide .banner .wapper h1:hover {
+  letter-spacing: 20px;
+  padding-left: 20px;
 }
 
 main .swiper-container .swiper-pagination-bullet {

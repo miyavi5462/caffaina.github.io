@@ -124,30 +124,45 @@ main {
         width: 100%;
         height: 100%;
         .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background: #fff;
-
             display: flex;
             justify-content: center;
             align-items: center;
             .banner {
-                position: relative;
                 width: 100%;
                 height: 100%;
-                background-image: url("https://placem.at/place?w=1920&txt=0");
 
+                position: relative;
+                background-image: url("https://placem.at/place?w=1920&txt=0");
+                background-position: center;
                 
-                    .icon{
-                        clip-path: url(#slideMask);
-                        background-color: #000;
-                        position: absolute;        
-                        width: 1280px;
-                        height: 776px;
-                        left: 50%;
-                        top: 50%;
-                        transform: translateX(-50%) translateY(-50%);
+                .sixAngle {
+                    clip-path: url(#slideMask);
+                    background-color: #fff;
+                    position: absolute;
+                    width: 520px;
+                    height: 600px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    filter: brightness(1.1);
+                    background-image: url("https://placem.at/place?w=1920&txt=0");
+                    background-position: center;
+                }
+                .wapper{
+                    position: absolute;
+                    
+                    left: 50%;
+                    top: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                    h1{
+                        transition: 0.3s;
+                        &:hover{
+                            letter-spacing: 20px;
+                            padding-left: 20px;                            
+                        }
                     }
+                }
+                
             }
         }
         .swiper-pagination-bullet {
