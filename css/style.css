@@ -43,9 +43,6 @@ header .wapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-header .wapper:hover {
   background-color: #0c3141;
 }
 
@@ -165,6 +162,26 @@ main .swiper-container .swiper-slide {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+main .swiper-container .swiper-slide .banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://placem.at/place?w=1920&txt=0");
+}
+
+main .swiper-container .swiper-slide .banner .icon {
+  -webkit-clip-path: url(#slideMask);
+          clip-path: url(#slideMask);
+  background-color: #000;
+  position: absolute;
+  width: 1280px;
+  height: 776px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
 }
 
 main .swiper-container .swiper-pagination-bullet {
