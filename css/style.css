@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: "Noto Sans TC", "Noto Serif TC", sans-serif, serif;
+  font-family: "Noto Serif TC", "Noto Sans TC", serif, sans-serif;
   background-color: #000000;
 }
 
@@ -18,6 +18,48 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+h1 {
+  font-size: 80px;
+  line-height: 88px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 56px;
+  line-height: 64px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 40px;
+  margin: 0;
+}
+
+h4 {
+  font-size: 28px;
+  line-height: 36px;
+  margin: 0;
+}
+
+h5 {
+  font-size: 20px;
+  line-height: 28px;
+  margin: 0;
+}
+
+h6 {
+  font-size: 12px;
+  line-height: 20px;
+  margin: 0;
+}
+
+p {
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+  margin: 0;
 }
 
 /* 宣告 */
@@ -101,10 +143,8 @@ header .wapper nav ul li:before {
           transform: scaleX(0);
   -webkit-transform-origin: right top;
           transform-origin: right top;
-  -webkit-transition: -webkit-transform 0.1s;
-  transition: -webkit-transform 0.1s;
-  transition: transform 0.1s;
-  transition: transform 0.1s, -webkit-transform 0.1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
   opacity: 0.3;
 }
 
@@ -133,15 +173,12 @@ header .wapper nav ul li a::before {
 
 header .wapper nav ul li a:hover {
   opacity: 0.7;
-  -webkit-transition: -webkit-transform 0.1s;
-  transition: -webkit-transform 0.1s;
-  transition: transform 0.1s;
-  transition: transform 0.1s, -webkit-transform 0.1s;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
 }
 
 main {
   height: calc(100vh - 64px);
-  background-color: #b46f6f;
 }
 
 main .swiper-container {
@@ -150,29 +187,108 @@ main .swiper-container {
 }
 
 main .swiper-container .swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+main .swiper-container .swiper-slide .container {
+  width: 600px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 2;
 }
 
-main .swiper-container .swiper-slide .banner {
-  width: 100%;
-  height: 100%;
+main .swiper-container .swiper-slide .container:hover .wapper h2 {
+  letter-spacing: 35px;
+  padding-left: 35px;
+}
+
+main .swiper-container .swiper-slide .container:hover .wapper h5 {
+  padding-left: 35px;
+}
+
+main .swiper-container .swiper-slide .container:hover p:before {
+  -webkit-transform-origin: left top;
+          transform-origin: left top;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+main .swiper-container .swiper-slide .container:hover + .sixAngle .background {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+main .swiper-container .swiper-slide .container:hover ~ .banner .background {
+  -webkit-transform: scale(1.1, 1.1);
+          transform: scale(1.1, 1.1);
+}
+
+main .swiper-container .swiper-slide .container .wapper h5 {
+  color: #ffffff;
+  letter-spacing: 8px;
+  padding-left: 32px;
+  -webkit-transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  padding-bottom: 15px;
+}
+
+main .swiper-container .swiper-slide .container .wapper h2 {
+  color: #ffffff;
+  letter-spacing: 24px;
+  padding-left: 24px;
+  padding-bottom: 65px;
+  -webkit-transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  margin: 8px 0;
+}
+
+main .swiper-container .swiper-slide .container p {
+  color: #ffffff;
+  letter-spacing: 6px;
+  padding-left: 6px;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+          transform: perspective(1px) translateZ(0);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   position: relative;
-  background-image: url("https://placem.at/place?w=1920&txt=0");
-  background-position: center;
 }
 
-main .swiper-container .swiper-slide .banner .sixAngle {
+main .swiper-container .swiper-slide .container p:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -7px;
+  left: 0;
+  background: #ffffff;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: right top;
+          transform-origin: right top;
+  -webkit-transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  opacity: 0.3;
+}
+
+main .swiper-container .swiper-slide .sixAngle {
   -webkit-clip-path: url(#slideMask);
           clip-path: url(#slideMask);
-  background-color: #fff;
   position: absolute;
   width: 520px;
   height: 600px;
@@ -180,28 +296,55 @@ main .swiper-container .swiper-slide .banner .sixAngle {
   top: 50%;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 1;
+}
+
+main .swiper-container .swiper-slide .sixAngle .background {
+  width: 100vw;
+  height: calc(100vh - 64px);
   -webkit-filter: brightness(1.1);
           filter: brightness(1.1);
-  background-image: url("https://placem.at/place?w=1920&txt=0");
+  background-image: url("https://placem.at/place?w=1920&h=1080&txt=0");
   background-position: center;
+  -webkit-transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
 }
 
-main .swiper-container .swiper-slide .banner .wapper {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
+main .swiper-container .swiper-slide .banner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-main .swiper-container .swiper-slide .banner .wapper h1 {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-main .swiper-container .swiper-slide .banner .wapper h1:hover {
-  letter-spacing: 20px;
-  padding-left: 20px;
+main .swiper-container .swiper-slide .banner .background {
+  background-image: url("https://placem.at/place?w=1920&h=1080&txt=0");
+  background-position: center;
+  width: 100vw;
+  height: calc(100vh - 64px);
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  -webkit-transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
+  transition: 0.5s cubic-bezier(0.19, 0.77, 0.28, 0.9);
 }
 
 main .swiper-container .swiper-pagination-bullet {
